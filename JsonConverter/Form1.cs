@@ -43,6 +43,21 @@ namespace JsonConverter
             }
         }
 
+        private void btnTotalData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string result = txtInput.Text;
+                result = result.Replace("[", "").Replace("]", "").Replace("\"", "'");
+                string[] array = result.Split(',');
+                txtTotalData.Text = array.ToList().Count().ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private string ConvertToInstaPyFormat()
         {
             try
@@ -77,8 +92,8 @@ namespace JsonConverter
         private static bool IsValidJson(string strInput)
         {
             strInput = strInput.Trim();
-            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || //For object
-                (strInput.StartsWith("[") && strInput.EndsWith("]"))) //For array
+            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
+                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
             {
                 try
                 {
@@ -87,11 +102,10 @@ namespace JsonConverter
                 }
                 catch (JsonReaderException jex)
                 {
-                    //Exception in parsing json
                     Console.WriteLine(jex.Message);
                     return false;
                 }
-                catch (Exception ex) //some other exception
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                     return false;
@@ -102,5 +116,6 @@ namespace JsonConverter
                 return false;
             }
         }
+
     }
 }

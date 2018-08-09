@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDataFrom = new System.Windows.Forms.TextBox();
             this.txtLimit = new System.Windows.Forms.TextBox();
+            this.btnTotalData = new System.Windows.Forms.Button();
+            this.txtTotalData = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtInput
@@ -95,11 +97,32 @@
             this.txtLimit.Size = new System.Drawing.Size(100, 20);
             this.txtLimit.TabIndex = 6;
             // 
+            // btnTotalData
+            // 
+            this.btnTotalData.Location = new System.Drawing.Point(416, 112);
+            this.btnTotalData.Name = "btnTotalData";
+            this.btnTotalData.Size = new System.Drawing.Size(75, 23);
+            this.btnTotalData.TabIndex = 7;
+            this.btnTotalData.Text = "Total Data";
+            this.btnTotalData.UseVisualStyleBackColor = true;
+            this.btnTotalData.Click += new System.EventHandler(this.btnTotalData_Click);
+            // 
+            // txtTotalData
+            // 
+            this.txtTotalData.Enabled = false;
+            this.txtTotalData.Location = new System.Drawing.Point(497, 114);
+            this.txtTotalData.Name = "txtTotalData";
+            this.txtTotalData.ReadOnly = true;
+            this.txtTotalData.Size = new System.Drawing.Size(56, 20);
+            this.txtTotalData.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 319);
+            this.Controls.Add(this.txtTotalData);
+            this.Controls.Add(this.btnTotalData);
             this.Controls.Add(this.txtLimit);
             this.Controls.Add(this.txtDataFrom);
             this.Controls.Add(this.label2);
@@ -123,6 +146,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDataFrom;
         private System.Windows.Forms.TextBox txtLimit;
+        private System.Windows.Forms.Button btnTotalData;
+        private System.Windows.Forms.TextBox txtTotalData;
     }
 }
 
